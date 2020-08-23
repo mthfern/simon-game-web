@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/75e5ab68e7.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="menu">
+      <button id="start">START<i class="fas fa-play"></i></button>
+      <button class="level" data-level="0">EASY</button>
+      <button class="level" data-level="1">NORMAL</button>
+      <button class="level" data-level="2">HARD</button>
+      <button class="level" data-level="3">INSANE</button>
+    </div>
+    <div class="scoreboard">
+      <div>
+        <span id="score-label">SCORE</span>
+        <span id="score-value" data-score="0"></span>
+      </div>
+      <div>
+        <span id="round-label">ROUND</span>
+        <span id="round-value" data-round="1"></span>
+      </div>
+    </div>
+    <div class="gameboard">
+      <button class="pad-btn btn-red"></button>
+      <button class="pad-btn btn-yellow"></button>
+      <button class="pad-btn btn-green"></button>
+      <button class="pad-btn btn-blue"></button>
+    </div>
+    <div class="end-panel">
+      <span id="end-msg"></span>
+      <button class="end-btn" id="restart">
+        RESTART<i class="fas fa-play"></i>
+      </button>
+      <button class="end-btn" id="change-lvl">
+        NEW LEVEL<i class="fas fa-layer-group"></i>
+      </button>
+    </div>
+  </body>
+</html>
