@@ -1,3 +1,4 @@
+// encapsulates Web Audio API into a simple class for easy use in the game
 export default class Audio {
   constructor() {
     this.audioContext = new AudioContext();
@@ -6,6 +7,7 @@ export default class Audio {
     this.noteTable = this.createNoteTable();
   }
 
+  // a bank of musical notes frequencies
   createNoteTable() {
     let noteTable = Array.from({ length: 14 }, () => []);
     noteTable[2]['B'] = 123.47082531403103;
@@ -25,10 +27,12 @@ export default class Audio {
     return noteTable;
   }
 
+  // get a note frequency from note table
   getNoteFrequency(octave, note) {
     return this.noteTable[octave][note];
   }
 
+  // create a sound
   createSound(aspect, frequency) {
     let osc;
 

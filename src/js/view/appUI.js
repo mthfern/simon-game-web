@@ -1,3 +1,6 @@
+// Organize user interface manipulation
+
+// all class and id references
 const DOMSelectors = {
   menu: 'menu',
   menuStart: 'start',
@@ -17,18 +20,7 @@ const DOMSelectors = {
   hidden: 'hidden',
 };
 
-const hideMenuButton = (elem) => {
-  elem.style.display = 'none';
-};
-
-const showMenuButton = (elem) => {
-  elem.style.display = 'flex';
-};
-
-const toggleVisible = (elem) => {
-  elem.classList.toggle(DOMSelectors.hidden);
-};
-
+// expose DOM elements
 export const DOMElements = {
   menu: document.querySelector(`.${DOMSelectors.menu}`),
   start: document.querySelector(`#${DOMSelectors.menuStart}`),
@@ -49,6 +41,20 @@ export const DOMElements = {
   chgLvlBtn: document.querySelector(`#${DOMSelectors.chgLvlBtn}`),
 };
 
+const hideMenuButton = (elem) => {
+  elem.style.display = 'none';
+};
+
+const showMenuButton = (elem) => {
+  elem.style.display = 'flex';
+};
+
+const toggleVisible = (elem) => {
+  elem.classList.toggle(DOMSelectors.hidden);
+};
+
+
+// expose UI functions
 export const toggleGameButtonActive = (index) => {
   DOMElements.boardBtn[index].classList.toggle(
     `${DOMSelectors[`btn${index}`]}-active`

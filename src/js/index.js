@@ -2,6 +2,7 @@ import '../css/styles.css';
 import GameControl from './control/gameControl';
 import * as UI from './view/appUI';
 
+// controls game flow
 const uiControl = ((DOM) => {
   const game = new GameControl();
 
@@ -54,5 +55,5 @@ const uiControl = ((DOM) => {
   };
 })(UI.DOMElements);
 
-// control user interface
+// init game flow
 uiControl.init();
