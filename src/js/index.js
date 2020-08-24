@@ -16,40 +16,56 @@ const uiControl = ((DOM) => {
       // add event listeners
 
       // after clicking 'start', user must choose a level
-      DOM.start.addEventListener('click', () => {
-        UI.chooseLevel();
+      ['touchend', 'click'].forEach((event) => {
+        DOM.start.addEventListener(event, (e) => {
+          e.preventDefault();
+          UI.chooseLevel();
+        });
       });
 
       // levels
       for (const level of DOM.levels) {
-        level.addEventListener('click', () => {
-          currLevel = level.dataset.level;
-          UI.startGame();
-          game.startNewGame(currLevel);
+        ['touchend', 'click'].forEach((event) => {
+          level.addEventListener(event, (e) => {
+            e.preventDefault();
+            currLevel = level.dataset.level;
+            UI.startGame();
+            game.startNewGame(currLevel);
+          });
         });
       }
 
       // game interaction
       DOM.boardBtn.forEach((btn, index) => {
-        btn.addEventListener('mousedown', () => {
-          if (game.gameStarted && game.userTurn) {
-            game.userAction('press', index);
-          }
+        ['touchstart', 'mousedown'].forEach((event) => {
+          btn.addEventListener(event, (e) => {
+            e.preventDefault();
+            if (game.gameStarted && game.userTurn) {
+              game.userAction('press', index);
+            }
+          });
         });
-        btn.addEventListener('mouseup', () => {
-          if (game.gameStarted && game.userTurn) {
-            game.userAction('release', index);
-          }
+        ['touchend', 'mouseup'].forEach((event) => {
+          btn.addEventListener(event, (e) => {
+            e.preventDefault();
+            if (game.gameStarted && game.userTurn) {
+              game.userAction('release', index);
+            }
+          });
         });
       });
 
       // end panel
-      DOM.restartBtn.addEventListener('click', (e) => {
-        UI.restartGame();
-        game.startNewGame(currLevel);
-      });
-      DOM.chgLvlBtn.addEventListener('click', (e) => {
-        UI.changeLevel();
+      ['touchend', 'click'].forEach((event) => {
+        DOM.restartBtn.addEventListener(event, (e) => {
+          e.preventDefault();
+          UI.restartGame();
+          game.startNewGame(currLevel);
+        });
+        DOM.chgLvlBtn.addEventListener(event, (e) => {
+          e.preventDefault();
+          UI.changeLevel();
+        });
       });
     },
   };

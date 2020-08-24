@@ -13,8 +13,8 @@ export default class GameControl {
     // game interaction buttons
     this.gameButtons = [
       { frequency: this.audioComp.getNoteFrequency(3, 'G') },
-      { frequency: this.audioComp.getNoteFrequency(4, 'C') },
       { frequency: this.audioComp.getNoteFrequency(4, 'D') },
+      { frequency: this.audioComp.getNoteFrequency(4, 'C') },
       { frequency: this.audioComp.getNoteFrequency(4, 'E') },
     ];
 
