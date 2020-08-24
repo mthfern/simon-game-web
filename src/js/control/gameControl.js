@@ -197,7 +197,7 @@ export default class GameControl {
     if (!this.currentFrequency) {
       this.currentFrequency = this.audioComp.createSound(aspect, frequency);
       this.currentFrequency.start();
-      UI.toggleGameButtonActive(btnId);
+      UI.activateGameButton(btnId);
     }
   }
 
@@ -206,7 +206,7 @@ export default class GameControl {
     if (this.currentFrequency) {
       this.currentFrequency.stop();
       this.currentFrequency = null;
-      UI.toggleGameButtonActive(btnId);
+      UI.deactivateGameButton(btnId);
     }
   }
 

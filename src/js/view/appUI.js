@@ -55,11 +55,13 @@ const toggleVisible = (elem) => {
 
 
 // expose UI functions
-export const toggleGameButtonActive = (index) => {
-  DOMElements.boardBtn[index].classList.toggle(
-    `${DOMSelectors[`btn${index}`]}-active`
-  );
-};
+export const activateGameButton = (index) => {
+  DOMElements.boardBtn[index].classList.add('active');
+}
+
+export const deactivateGameButton = (index) => {
+  DOMElements.boardBtn[index].classList.remove('active');
+}
 
 export const updateScore = (value) => {
   DOMElements.scoreValue.dataset.score = value;
