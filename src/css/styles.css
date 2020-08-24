@@ -127,13 +127,16 @@ body {
   opacity: 0.4;
 }
 
+.pad-btn.active{
+  z-index: 1;
+  opacity: 1;  
+}
+
 .btn-red {
   background-color: var(--btn-red-color);
 }
 
-.btn-red-active {
-  z-index: 1;
-  opacity: 1;
+.btn-red.active {
   box-shadow: 0 0 15px 5px var(--btn-red-color);
 }
 
@@ -141,9 +144,7 @@ body {
   background-color: var(--btn-yellow-color);
 }
 
-.btn-yellow-active {
-  z-index: 1;
-  opacity: 1;
+.btn-yellow.active {
   box-shadow: 0 0 15px 5px var(--btn-yellow-color);
 }
 
@@ -151,9 +152,7 @@ body {
   background-color: var(--btn-green-color);
 }
 
-.btn-green-active {
-  z-index: 1;
-  opacity: 1;
+.btn-green.active {
   box-shadow: 0 0 15px 5px var(--btn-green-color);
 }
 
@@ -161,9 +160,7 @@ body {
   background-color: var(--btn-blue-color);
 }
 
-.btn-blue-active {
-  z-index: 1;
-  opacity: 1;
+.btn-blue.active {
   box-shadow: 0 0 15px 5px var(--btn-blue-color);
 }
 
